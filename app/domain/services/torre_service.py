@@ -7,7 +7,7 @@ class TorreService(ITorreService):
     def __init__(self, repository: ITorreRepository):
         self.repository = repository
 
-    def get_user_by_username(self, username: str) -> User:
+    def get_user_by_username(self, username: str) -> User | None:
         return self.repository.get_user_by_username(username)
 
     def get_user_skill_details(self, username: str, skill_id: str) -> UserSkillDetails:

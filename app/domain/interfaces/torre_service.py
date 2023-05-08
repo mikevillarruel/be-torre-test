@@ -6,7 +6,7 @@ from app.domain.models import User, UserSkillDetails
 class ITorreService(ABC):
 
     @abstractmethod
-    def get_user_by_username(self, username: str) -> User:
+    def get_user_by_username(self, username: str) -> User | None:
         pass
 
     @abstractmethod

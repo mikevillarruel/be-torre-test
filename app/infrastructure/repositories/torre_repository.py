@@ -6,10 +6,14 @@ from app.domain.models import User, Skill, Experience, UserSkillDetails
 
 
 class TorreRepository(ITorreRepository):
-    def get_user_by_username(self, username: str) -> User:
+    def get_user_by_username(self, username: str) -> User | None:
         conn = http.client.HTTPSConnection("bio.torre.co")
         conn.request("GET", f"/api/bios/{username}")
         res = conn.getresponse()
+
+        if res.status == 404:
+            return None
+
         data = res.read()
         data = json.loads(data)
         person = data['person']
