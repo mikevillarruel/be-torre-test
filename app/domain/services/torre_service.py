@@ -13,5 +13,5 @@ class TorreService(ITorreService):
     def get_user_skill_details(self, username: str, skill_id: str) -> UserSkillDetails:
         return self.repository.get_user_skill_details(username, skill_id)
 
-    def get_people_skilled_in(self, skill_name: str, skill_proficiency: str, size: int) -> list[User]:
-        return self.repository.get_people_skilled_in(skill_name, skill_proficiency, size)
+    def get_users_skilled_in(self, skill_name: str, skill_proficiency: str, size: int) -> list[User]:
+        return self.repository.get_users_skilled_in(skill_name, skill_proficiency, size)

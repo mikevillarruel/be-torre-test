@@ -68,7 +68,7 @@ class TorreRepository(ITorreRepository):
 
         return UserSkillDetails(skill=skill, experiences=experiences)
 
-    def get_people_skilled_in(self, skill_name: str, skill_proficiency: str, size: int) -> list[User]:
+    def get_users_skilled_in(self, skill_name: str, skill_proficiency: str, size: int) -> list[User]:
         payload = json.dumps({
             "and": [
                 {
